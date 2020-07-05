@@ -2,11 +2,14 @@
   <section>
     <div class="about">
       <ul>
-        <li v-for="item in questions" v-bind:key="item.id">{{item.qst}}</li>
+        <li
+          v-for="item in $options.filters.filteredQuestion(questions)"
+          v-bind:key="item.id"
+        >{{item.qst}}</li>
       </ul>
       <div class="text-center">
-        <button class="qustn-generator" v-if="counter< 10" v-on:click="counter += 1">Next &#8680;</button>
-        <button class="qustn-generator" v-if="counter === 10">Submit</button>
+        <button class="qustn-generator" v-if="counter< 9" v-on:click="counter += 1">Next &#8680;</button>
+        <button class="qustn-generator" v-if="counter === 9">Submit</button>
       </div>
     </div>
   </section>
@@ -88,14 +91,17 @@ export default {
   data: () => {
     return initialState();
   },
-  methods: {
-    getRandomInt: function() {
-      return Math.floor(Math.random() * 10) + 1;
+  filters: {
+    filteredQuestion: function(data) {
+      const number = Math.floor(Math.random() * 9) + 1;
+      const tempData = [];
+      for (let qst in data) {
+        if (+data[qst].id === +number) {
+          tempData.push(data[qst]);
+        }
+      }
+      return tempData;
     }
-  },
-  beforeMount() {
-    const numbers = this.getRandomInt();
-    console.log(numbers, "numbers");
   }
 };
 </script>

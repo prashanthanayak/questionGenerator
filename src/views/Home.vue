@@ -25,20 +25,6 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
-
-    .qustn-generator {
-      background-image: linear-gradient(to right, red, orange);
-      border-radius: 100px;
-      border: none;
-      cursor: pointer;
-      color: #ffffff;
-      font-size: 20px;
-      padding: 10px 15px;
-      outline: none;
-      &:hover {
-        box-shadow: 2px 2px 5px #ddd;
-      }
-    }
     .header {
       color: #ffffff;
       font-size: 60px;

@@ -14,7 +14,10 @@
           <li>Option 4</li>
         </ul>
       </ul>
-      <div class="text-center">
+    </div>
+    <div class="footer">
+      <div>Q{{counter + 1}} / {{questions.length}}</div>
+      <div>
         <button class="qustn-generator" v-if="counter< 9" v-on:click="counter += 1">Next &#8680;</button>
         <button class="qustn-generator" v-if="counter === 9">Submit</button>
       </div>
@@ -32,7 +35,7 @@ section {
     padding: 20px;
   }
   .about {
-    border: dotted 3px rgba(69, 23, 113, 0.92);
+    border: solid 2px rgba(69, 23, 113, 0.92);
     border-top: 0;
     color: rgba(69, 23, 113, 0.92);
     font-size: 20px;
@@ -46,6 +49,14 @@ section {
         list-style: circle;
       }
     }
+  }
+  .footer {
+    background-color: rgba(69, 23, 113, 0.92);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2.5;
+    padding: 5px 10px;
   }
 }
 </style>

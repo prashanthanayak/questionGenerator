@@ -1,11 +1,18 @@
 <template>
   <section>
+    <header class="questn-header">Assessment</header>
     <div class="about">
       <ul>
         <li
           v-for="item in $options.filters.filteredQuestion(questions)"
           v-bind:key="item.id"
         >{{item.qst}}</li>
+        <ul class="answers">
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+          <li>Option 4</li>
+        </ul>
       </ul>
       <div class="text-center">
         <button class="qustn-generator" v-if="counter< 9" v-on:click="counter += 1">Next &#8680;</button>
@@ -18,11 +25,27 @@
 <style lang="scss" scoped>
 section {
   padding: 30px;
+  .questn-header {
+    background-color: rgba(69, 23, 113, 0.92);
+    color: #ffffff;
+    font-size: xx-large;
+    padding: 20px;
+  }
   .about {
     border: dotted 3px rgba(69, 23, 113, 0.92);
+    border-top: 0;
     color: rgba(69, 23, 113, 0.92);
     font-size: 20px;
     padding: 20px;
+    ul {
+      line-height: 3;
+      list-style: none;
+      .answers {
+        padding-left: 10px;
+        line-height: 2;
+        list-style: circle;
+      }
+    }
   }
 }
 </style>

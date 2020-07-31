@@ -3,8 +3,8 @@
     <div class="section">
       <div>
         <div class="header">Random Question Generator</div>
-        <router-link to="/register">
-          <button type="button" class="qustn-generator" to="/register">Generate question</button>
+        <router-link to="/questions">
+          <button type="button" class="qustn-generator" to="/questions">Generate question</button>
         </router-link>
       </div>
     </div>
